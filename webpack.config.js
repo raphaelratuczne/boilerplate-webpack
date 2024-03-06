@@ -4,8 +4,8 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 module.exports = {
   mode: "development",
   entry: {
-    index: "./src/index.ts",
-    other: "./src/other.ts",
+    index: "./src/scripts/index.ts",
+    other: "./src/scripts/other.ts",
   },
   module: {
     rules: [
@@ -25,6 +25,14 @@ module.exports = {
           "sass-loader",
         ],
       },
+      {
+        test: /\.(png|svg|jpg|jpeg|gif|woff|woff2|eot|ttf|otf)$/i,
+        type: "asset/resource",
+      },
+      {
+        test: /\.(html)$/,
+        use: ["html-loader"],
+      },
     ],
   },
   resolve: {
@@ -37,18 +45,19 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       filename: "index.html",
-      template: "src/index.html",
+      template: "src/pages/index.html",
       chunks: ["index"],
     }),
     new HtmlWebpackPlugin({
       filename: "other.html",
-      template: "src/other.html",
+      template: "src/pages/other.html",
       chunks: ["other"],
     }),
   ],
   output: {
-    filename: "[name].[contenthash].js",
+    filename: "js/[name].[contenthash].js",
     path: path.resolve(__dirname, "dist"),
     clean: true,
+    assetModuleFilename: "assets/[name].[ext][query]",
   },
 };
