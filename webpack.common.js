@@ -1,8 +1,8 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const Dotenv = require("dotenv-webpack");
 
 module.exports = {
-  mode: "development",
   entry: {
     index: "./src/scripts/index.ts",
     other: "./src/scripts/other.ts",
@@ -38,11 +38,8 @@ module.exports = {
   resolve: {
     extensions: [".tsx", ".ts", ".js"],
   },
-  devtool: "inline-source-map",
-  devServer: {
-    static: "./dist",
-  },
   plugins: [
+    new Dotenv(),
     new HtmlWebpackPlugin({
       filename: "index.html",
       template: "src/pages/index.html",
