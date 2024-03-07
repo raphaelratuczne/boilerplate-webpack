@@ -18,9 +18,9 @@ Este projeto foi criado para servir como modelo configurado para projetos simple
 - No arquivo package.json, altere a propriedades name para o nome do seu projeto.
 - Se não for utilizar, exclua o lodash da lista de dependências.
 - No terminal de comando rode o comando para instalar as dependências do projeto:
-
+    
     npm install
-
+    
 - O diretório "src" contem outros diretórios para organizar os arquivos do projeto. Você pode excluir todos os arquivos, mas mantenha os diretórios.
 - Organizando seus arquivos:
   -- Mova os seus arquivos html para o diretório "src/pages".
