@@ -28,8 +28,8 @@ Este projeto foi criado para servir como modelo configurado para projetos simple
   -- Verifique se suas fontes estão corretamente importadas dentro dos arquivos scss obedecendo a nova estrutura de diretórios:
 
       @font-face {
-        font-family: 'Roboto';
-      	src: url('../fonts/Roboto/Roboto-Medium.ttf');
+          font-family: 'Roboto';
+      	  src: url('../fonts/Roboto/Roboto-Medium.ttf');
       }
 
 -- Agora seus arquivos scss devem ser importados dentro dos seus arquivos ts:
@@ -42,16 +42,16 @@ Este projeto foi criado para servir como modelo configurado para projetos simple
   -- No bloco "entry" você deve referenciar todos os scripts que serão adicionados ás páginas. Não é necessário referencias arquivos que contem apenas exports que não serão diretamente adicionados a uma página.
 
       entry: {
-        index: "./src/scripts/index.ts",
-      	other: "./src/scripts/other.ts",
+          index: "./src/scripts/index.ts",
+      	  other: "./src/scripts/other.ts",
       }
 
 -- No bloco "plugins", cada pagina html deve ser referenciada dentro de um objeto "HtmlWebpackPlugin":
 
     new HtmlWebpackPlugin({
-      filename: "index.html", // nome do arquivo que será gerado
-    	template: "src/pages/index.html", // seu arquivo html
-    	chunks: ["index"], // os nomes dos arquivos js que serão adicionados no html
+        filename: "index.html", // nome do arquivo que será gerado
+    	  template: "src/pages/index.html", // seu arquivo html
+    	  chunks: ["index"], // os nomes dos arquivos js que serão adicionados no html
     })
 
 - Com tudo configurado, você pode utilizar o script "start" para trabalhar em seu projeto e, ao final pode utilizar o script "build" para gerar os arquivos do seu projeto dentro da pasta "dist".
