@@ -7,7 +7,9 @@ Este projeto foi criado para servir como modelo configurado para projetos simple
 É importante ter os seguintes plugins instalados para utilizar os recursos configurados:
 
 [EditorConfig for VS Code](https://marketplace.visualstudio.com/items?itemName=EditorConfig.EditorConfig)
+
 [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
+
 [Prettier - Code formatter](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
 
 ### Passos para limpar e configurar o projeto
@@ -26,7 +28,7 @@ Este projeto foi criado para servir como modelo configurado para projetos simple
   -- Verifique se suas fontes estão corretamente importadas dentro dos arquivos scss obedecendo a nova estrutura de diretórios:
 
       @font-face {
-          font-family: 'Roboto';
+        font-family: 'Roboto';
       	src: url('../fonts/Roboto/Roboto-Medium.ttf');
       }
 
@@ -40,14 +42,14 @@ Este projeto foi criado para servir como modelo configurado para projetos simple
   -- No bloco "entry" você deve referenciar todos os scripts que serão adicionados ás páginas. Não é necessário referencias arquivos que contem apenas exports que não serão diretamente adicionados a uma página.
 
       entry: {
-          index: "./src/scripts/index.ts",
+        index: "./src/scripts/index.ts",
       	other: "./src/scripts/other.ts",
       }
 
 -- No bloco "plugins", cada pagina html deve ser referenciada dentro de um objeto "HtmlWebpackPlugin":
 
     new HtmlWebpackPlugin({
-        filename: "index.html", // nome do arquivo que será gerado
+      filename: "index.html", // nome do arquivo que será gerado
     	template: "src/pages/index.html", // seu arquivo html
     	chunks: ["index"], // os nomes dos arquivos js que serão adicionados no html
     })
